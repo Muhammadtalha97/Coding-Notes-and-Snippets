@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#000000]">
+    <nav class="bg-[#222222] shadow-xl">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-bold text-[#1DCD9F]">LOGO</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-200 hover:text-[#1DCD9F] transition-colors duration-300">Home</a>
+                    
+                    <!-- Language Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-200 hover:text-[#1DCD9F] transition-colors duration-300">
+                            Language
+                        </button>
+                        <div class="absolute opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-[#222222] shadow-2xl rounded-lg py-2 mt-2 min-w-[160px] z-10">
+                            <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">C++</a>
+                            <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">Python</a>
+                            <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">Java</a>
+                        </div>
+                    </div>
+
+                    <!-- Web Development Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-200 hover:text-[#1DCD9F] transition-colors duration-300">
+                            Web Development
+                        </button>
+                        <div class="absolute opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-[#222222] shadow-2xl rounded-lg py-2 mt-2 min-w-[160px] z-10">
+                            <a href="/css.html" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">CSS</a>
+                            <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">JS</a>
+                            <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">Nuxt JS</a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-200 hover:text-[#1DCD9F] transition-colors duration-300">
+                           Libraries
+                        </button>
+                        <div class="absolute opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-[#222222] shadow-2xl rounded-lg py-2 mt-2 min-w-[160px] z-10">
+                            <a href="csslib.html" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">CSS</a>
+                            <a href="jslib.html" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">JS</a>
+                            <a href="iconslib.html" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">Icons & Graphics</a>
+                            <a href="illustrationlib.html" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">Illustration</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

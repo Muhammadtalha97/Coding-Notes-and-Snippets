@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Libraries</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-[#000000] min-h-screen">
+    <!-- Header Section -->
+    <header class="bg-[#222222] shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/index.html" class="text-[#1DCD9F] hover:text-[#169976] transition-colors duration-300 text-lg font-bold">
+                   <i class="fa-solid fa-arrow-left"></i> Back
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Page Heading -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-[#1DCD9F] mb-4">CSS Libraries</h1>
+            <p class="text-gray-300 text-lg">Explore popular CSS frameworks and libraries</p>
+            <p class="text-gray-400">Simplify your styling process with these powerful tools</p>
+        </div>
+
+        <!-- Libraries Grid Container -->
+        <div id="libraries-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Cards will be rendered here dynamically -->
+        </div>
+    </main>
+
+    <script>
+        // JSON data (can be loaded from external file)
+        const librariesData = {
+            "libraries": [
+                {
+                    "name": "Bootstrap",
+                    "description": "The world's most popular CSS framework for building responsive, mobile-first websites with pre-built components and utilities.",
+                    "url": "https://getbootstrap.com",
+                    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                },
+                {
+                    "name": "Tailwind CSS",
+                    "description": "A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup.",
+                    "url": "https://tailwindcss.com",
+                    "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSDKn3vA2YUbXzN0ZC3gALWJ08gJN-Drl15w&s"
+                },
+                {
+                    "name": "Bulma",
+                    "description": "Modern CSS framework based on Flexbox with no JavaScript requirements and easy-to-use syntax.",
+                    "url": "https://bulma.io",
+                    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bulma/bulma-plain.svg"
+                }
+            ]
+        };
+
+        // Function to render cards
+        function renderLibraries() {
+            const container = document.getElementById('libraries-container');
+            
+            librariesData.libraries.forEach(library => {
+                const card = document.createElement('div');
+                card.className = 'bg-[#222222] rounded-lg p-6 shadow-xl hover:border-[#1DCD9F] transition-all duration-300 border-2 border-transparent';
+                
+                card.innerHTML = `
+                    <div class="flex items-center mb-4 ">
+                        <img src="${library.icon}" alt="${library.name} logo" class="w-10 h-10 mr-3 rounded-lg ">
+                        <h2 class="text-2xl font-semibold text-[#1DCD9F]">${library.name}</h2>
+                    </div>
+                    <p class="text-gray-300 mb-4">${library.description}</p>
+                    <a href="${library.url}" target="_blank" 
+                       class="inline-block bg-[#169976] hover:bg-[#1DCD9F] text-white px-6 py-2 rounded-md transition-colors duration-300">
+                        Visit Website
+                    </a>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Load and render when page loads
+        document.addEventListener('DOMContentLoaded', renderLibraries);
+    </script>
+</body>
+</html>

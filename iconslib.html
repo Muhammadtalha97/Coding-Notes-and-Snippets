@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Icons & Graphics Libraries</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-[#000000] min-h-screen">
+    <!-- Header Section -->
+    <header class="bg-[#222222] shadow-xl">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <a
+            href="/index.html"
+            class="text-[#1DCD9F] hover:text-[#169976] transition-colors duration-300 text-lg"
+          >
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+      <!-- Page Heading -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-[#1DCD9F] mb-4">
+          Icons & Graphics Libraries
+        </h1>
+        <p class="text-gray-300 text-lg">
+          Premium resources for designers and developers
+        </p>
+        <p class="text-gray-400">
+          SVG vectors, icon sets, and background patterns
+        </p>
+      </div>
+
+      <!-- Libraries Grid Container -->
+      <div
+        id="libraries-container"
+        class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        <!-- Cards will be rendered here dynamically -->
+      </div>
+    </main>
+
+    <script>
+      // JSON data for icons and graphics libraries
+      const graphicsData = {
+        libraries: [
+          {
+            name: "SVG Backgrounds",
+            description:
+              "Customizable SVG patterns and backgrounds for your projects. Perfect for hero sections and page designs.",
+            url: "https://www.svgbackgrounds.com/",
+            icon: "fas fa-square-full",
+            category: "Backgrounds",
+            license: "Free",
+          },
+
+          {
+            name: "Font Awesome",
+            description:
+              "The web's most popular icon set and toolkit with thousands of free icons.",
+            url: "https://fontawesome.com/",
+            icon: "fas fa-icons",
+            category: "Icons",
+            license: "Free/Pro",
+          },
+          {
+            name: "Feather Icons",
+            description:
+              "Simply beautiful open source icons designed on a 24x24 grid.",
+            url: "https://feathericons.com/",
+            icon: "fas fa-feather",
+            category: "Icons",
+            license: "MIT",
+          },
+
+          {
+            name: "Shape Divider",
+            description:
+              "Generate custom shape dividers for your website sections.",
+            url: "https://www.shapedivider.app/",
+            icon: "fas fa-wave-square",
+            category: "Shapes",
+            license: "Free",
+          },
+          {
+            name: "Blobmaker",
+            description:
+              "Generate random, unique, and organic SVG blobs for your designs.",
+            url: "https://www.blobmaker.app/",
+            icon: "fas fa-blob",
+            category: "Shapes",
+            license: "Free",
+          },
+          {
+            name: "Ionicons",
+            description:
+              "Beautifully crafted open source icons for web, iOS, Android, and desktop apps.",
+            url: "https://ionic.io/ionicons",
+            icon: "fas fa-mobile-alt",
+            category: "Icons",
+            license: "MIT",
+          },
+        ],
+      };
+
+      // Function to render cards
+      function renderLibraries() {
+        const container = document.getElementById("libraries-container");
+
+        graphicsData.libraries.forEach((lib) => {
+          const card = document.createElement("div");
+          card.className =
+            "bg-[#222222] rounded-lg p-6 shadow-xl hover:border-[#1DCD9F] transition-all duration-300 border-2 border-transparent flex flex-col";
+
+          card.innerHTML = `
+                    <div class="flex items-center mb-4">
+                        <i class="${lib.icon} text-2xl text-[#1DCD9F] mr-3 w-8 text-center"></i>
+                        <h2 class="text-2xl font-semibold text-[#1DCD9F]">${lib.name}</h2>
+                    </div>
+                    <p class="text-gray-300 mb-4 flex-grow">${lib.description}</p>
+                    <div class="mb-4">
+                        <span class="inline-block bg-[#169976] text-white text-xs px-2 py-1 rounded mr-2">${lib.category}</span>
+                        <span class="inline-block bg-[#222222] border border-[#1DCD9F] text-gray-300 text-xs px-2 py-1 rounded">${lib.license}</span>
+                    </div>
+                    <a href="${lib.url}" target="_blank" 
+                       class="inline-block bg-[#169976] hover:bg-[#1DCD9F] text-white px-6 py-2 rounded-md transition-colors duration-300 text-center">
+                        Visit Library
+                    </a>
+                `;
+
+          container.appendChild(card);
+        });
+      }
+
+      // Load and render when page loads
+      document.addEventListener("DOMContentLoaded", renderLibraries);
+    </script>
+  </body>
+</html>

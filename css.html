@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Snippets & Notes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-[#000000] min-h-screen">
+    <!-- Header -->
+    <header class="bg-[#222222] shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/index.html"
+                    class="text-[#1DCD9F] hover:text-[#169976] transition-colors duration-300 font-bold ">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </a>
+                <h1 class="text-3xl font-bold text-[#1DCD9F]">CSS Snippets and Notes</h1>
+                <div class="w-8"></div> <!-- Spacer for balance -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Responsive Font Size Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-[#1DCD9F] mb-4">Responsive Font-Size</h2>
+            <p class="text-gray-300 mb-6 leading-relaxed">
+                The clamp() function allows to set the min, default and max values for font:<br>
+            <ul>
+                <li>
+                    <span class="text-[#169976]">1. Minimum size</span> (40px)
+                </li>
+                <li>
+                    <span class="text-[#169976]">2. Default value</span> (8vw)
+                </li>
+                <li>
+                    <span class="text-[#169976]">3. Maximum size</span> (105px)
+                </li>
+            </ul>
+            </p>
+
+            <!-- Code Snippet -->
+            <div class="code-box">
+                <div class="code-header">
+                    <span class="language-label">CSS</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-css">
+h1 {
+    font-size: clamp(40px, 8vw, 105px);
+}</code></pre>
+            </div>
+        </section>
+    </main>
+
+    <!-- Styles -->
+    <style>
+        .code-box {
+            position: relative;
+            margin: 1em 0;
+            border-radius: 4px;
+            background: #1e1e1e;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: #252526;
+            border-bottom: 1px solid #3c3c3c;
+        }
+
+        .language-label {
+            color: #9cdcfe;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        .copy-btn {
+            background: #007acc;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-size: 0.8em;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #0062a3;
+        }
+
+        pre {
+            margin: 0;
+            padding: 16px;
+            overflow-x: auto;
+        }
+
+        pre code {
+            font-family: 'Fira Code', monospace;
+            line-height: 1.5;
+        }
+    </style>
+
+    <!-- Highlight.js and Copy Functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        // Initialize Highlight.js
+        hljs.highlightAll();
+
+        // Copy Function
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-box').querySelector('code');
+            const text = codeBlock.innerText;
+
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>

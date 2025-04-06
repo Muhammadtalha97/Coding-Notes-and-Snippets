@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illustration Libraries</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#000000] min-h-screen">
+    <!-- Header Section -->
+    <header class="bg-[#222222] shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/index.html" class="text-[#1DCD9F] hover:text-[#169976] transition-colors duration-300 text-lg font-bold">
+                   <i class="fa-solid fa-arrow-left"></i> Back
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Page Heading -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-[#1DCD9F] mb-4">Illustration Libraries</h1>
+            <p class="text-gray-300 text-lg">Beautiful free-to-use illustration resources</p>
+            <p class="text-gray-400">Enhance your projects with these curated collections</p>
+        </div>
+
+        <!-- Libraries Grid Container -->
+        <div id="libraries-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Cards will be rendered here dynamically -->
+        </div>
+    </main>
+
+    <script>
+        // JSON data for illustration libraries
+        const illustrationData = {
+            "libraries": [
+                {
+                    "name": "Pictographic",
+                    "description": "Free customizable illustrations with a fun, hand-drawn style. Change colors and composition to match your brand.",
+                    "url": "https://www.pictographic.io/",
+                    "icon": "fas fa-palette",
+                    "category": "Hand-drawn",
+                    "license": "Free for commercial use"
+                },
+                {
+                    "name": "Undraw",
+                    "description": "Open-source illustrations for any idea you can imagine and create.",
+                    "url": "https://undraw.co/",
+                    "icon": "fas fa-paint-brush",
+                    "category": "Flat Design",
+                    "license": "MIT"
+                },
+                {
+                    "name": "Humaaans",
+                    "description": "Mix-&-match illustrations of people with a design library for InVison Studio and Sketch.",
+                    "url": "https://www.humaaans.com/",
+                    "icon": "fas fa-users",
+                    "category": "Characters",
+                    "license": "CC BY 4.0"
+                },
+                {
+                    "name": "Open Peeps",
+                    "description": "Hand-drawn illustration library of people. Combine clothing, hairstyles and emotions.",
+                    "url": "https://www.openpeeps.com/",
+                    "icon": "fas fa-user-friends",
+                    "category": "Hand-drawn",
+                    "license": "CC0"
+                },
+                {
+                    "name": "Blush",
+                    "description": "Create custom illustrations combining different artists' styles with your preferred colors.",
+                    "url": "https://blush.design/",
+                    "icon": "fas fa-magic",
+                    "category": "Mix & Match",
+                    "license": "Various"
+                },
+                {
+                    "name": "IRA Design",
+                    "description": "Build amazing illustrations using customizable gradient colors.",
+                    "url": "https://iradesign.io/",
+                    "icon": "fas fa-fill-drip",
+                    "category": "Gradient",
+                    "license": "Free"
+                }
+            ]
+        };
+
+        // Function to render cards
+        function renderLibraries() {
+            const container = document.getElementById('libraries-container');
+            
+            illustrationData.libraries.forEach(lib => {
+                const card = document.createElement('div');
+                card.className = 'bg-[#222222] rounded-lg p-6 shadow-xl hover:border-[#1DCD9F] transition-all duration-300 border-2 border-transparent flex flex-col';
+                
+                card.innerHTML = `
+                    <div class="flex items-center mb-4">
+                        <i class="${lib.icon} text-2xl text-[#1DCD9F] mr-3 w-8 text-center"></i>
+                        <h2 class="text-2xl font-semibold text-[#1DCD9F]">${lib.name}</h2>
+                    </div>
+                    <p class="text-gray-300 mb-4 flex-grow">${lib.description}</p>
+                    <div class="mb-4">
+                        <span class="inline-block bg-[#169976] text-white text-xs px-2 py-1 rounded mr-2">${lib.category}</span>
+                        <span class="inline-block bg-[#222222] border border-[#1DCD9F] text-gray-300 text-xs px-2 py-1 rounded">${lib.license}</span>
+                    </div>
+                    <a href="${lib.url}" target="_blank" 
+                       class="inline-block bg-[#169976] hover:bg-[#1DCD9F] text-white px-6 py-2 rounded-md transition-colors duration-300 text-center">
+                        Visit Library
+                    </a>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Load and render when page loads
+        document.addEventListener('DOMContentLoaded', renderLibraries);
+    </script>
+</body>
+</html>
