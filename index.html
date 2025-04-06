@@ -15,7 +15,7 @@
                     <span class="text-2xl font-bold text-[#1DCD9F]">LOGO</span>
                 </div>
 
-                <!-- Navigation Links -->
+                <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#" class="text-gray-200 hover:text-[#1DCD9F] transition-colors duration-300">Home</a>
                     
@@ -42,21 +42,123 @@
                             <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">Nuxt JS</a>
                         </div>
                     </div>
+                    
+                    <!-- Libraries Dropdown -->
                     <div class="relative group">
                         <button class="text-gray-200 hover:text-[#1DCD9F] transition-colors duration-300">
                            Libraries
                         </button>
-                        <div class="absolute opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-[#222222] shadow-2xl rounded-lg py-2 mt-2 min-w-[160px] z-10">
+                        <div class="absolute opacity-0 right-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-[#222222] shadow-2xl rounded-lg py-2 mt-2 min-w-[160px] z-10">
                             <a href="csslib.html" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">CSS</a>
                             <a href="jslib.html" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">JS</a>
                             <a href="iconslib.html" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">Icons & Graphics</a>
                             <a href="illustrationlib.html" class="block px-4 py-2 text-gray-200 hover:bg-[#169976]">Illustration</a>
                         </div>
                     </div>
+                </div>
 
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-200 hover:text-[#1DCD9F] focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-[#222222]">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 text-gray-200 hover:text-[#1DCD9F]">Home</a>
+                
+                <!-- Language Mobile Dropdown -->
+                <div class="relative">
+                    <button id="language-mobile-button" class="w-full text-left px-3 py-2 text-gray-200 hover:text-[#1DCD9F] flex justify-between items-center">
+                        Language
+                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div id="language-mobile-dropdown" class="hidden pl-4">
+                        <a href="#" class="block px-3 py-2 text-gray-300 hover:bg-[#169976]">C++</a>
+                        <a href="#" class="block px-3 py-2 text-gray-300 hover:bg-[#169976]">Python</a>
+                        <a href="#" class="block px-3 py-2 text-gray-300 hover:bg-[#169976]">Java</a>
+                    </div>
+                </div>
+
+                <!-- Web Development Mobile Dropdown -->
+                <div class="relative">
+                    <button id="webdev-mobile-button" class="w-full text-left px-3 py-2 text-gray-200 hover:text-[#1DCD9F] flex justify-between items-center">
+                        Web Development
+                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div id="webdev-mobile-dropdown" class="hidden pl-4">
+                        <a href="/css.html" class="block px-3 py-2 text-gray-300 hover:bg-[#169976]">CSS</a>
+                        <a href="#" class="block px-3 py-2 text-gray-300 hover:bg-[#169976]">JS</a>
+                        <a href="#" class="block px-3 py-2 text-gray-300 hover:bg-[#169976]">Nuxt JS</a>
+                    </div>
+                </div>
+
+                <!-- Libraries Mobile Dropdown -->
+                <div class="relative">
+                    <button id="libs-mobile-button" class="w-full text-left px-3 py-2 text-gray-200 hover:text-[#1DCD9F] flex justify-between items-center">
+                        Libraries
+                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div id="libs-mobile-dropdown" class="hidden pl-4">
+                        <a href="csslib.html" class="block px-3 py-2 text-gray-300 hover:bg-[#169976]">CSS</a>
+                        <a href="jslib.html" class="block px-3 py-2 text-gray-300 hover:bg-[#169976]">JS</a>
+                        <a href="iconslib.html" class="block px-3 py-2 text-gray-300 hover:bg-[#169976]">Icons & Graphics</a>
+                        <a href="illustrationlib.html" class="block px-3 py-2 text-gray-300 hover:bg-[#169976]">Illustration</a>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile dropdown toggles
+        const languageMobileButton = document.getElementById('language-mobile-button');
+        const languageMobileDropdown = document.getElementById('language-mobile-dropdown');
+
+        const webdevMobileButton = document.getElementById('webdev-mobile-button');
+        const webdevMobileDropdown = document.getElementById('webdev-mobile-dropdown');
+
+        const libsMobileButton = document.getElementById('libs-mobile-button');
+        const libsMobileDropdown = document.getElementById('libs-mobile-dropdown');
+
+        languageMobileButton.addEventListener('click', () => {
+            languageMobileDropdown.classList.toggle('hidden');
+        });
+
+        webdevMobileButton.addEventListener('click', () => {
+            webdevMobileDropdown.classList.toggle('hidden');
+        });
+
+        libsMobileButton.addEventListener('click', () => {
+            libsMobileDropdown.classList.toggle('hidden');
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
